@@ -1,6 +1,4 @@
 /*
- * Copyright 2016, The Android Open Source Project
- *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,9 +17,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 24
     buildToolsVersion '24.0.3'
-
     defaultConfig {
-        applicationId "com.example.androidthings.myproject"
+        applicationId 'br.com.netomarin.iot.hellorainbowhat'
         minSdkVersion 24
         targetSdkVersion 24
         versionCode 1
@@ -33,8 +30,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+    }
 }
 
 dependencies {
     provided 'com.google.android.things:androidthings:0.2-devpreview'
+
+    compile 'com.google.android.things.contrib:driver-button:0.1'
+    compile 'com.google.android.things.contrib:driver-ht16k33:0.1'
+    compile 'com.google.android.things.contrib:driver-apa102:0.1'
+    compile 'com.google.android.things.contrib:driver-pwmspeaker:0.1'
 }
